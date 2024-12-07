@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  
+    <bean id="employee" class="com.klef.jfsd.exam.Employee">
+        <constructor-arg index="0" type="java.lang.Integer" value="341" />
+        <constructor-arg index="1" type="java.lang.String" value="Hemanth" />
+        <constructor-arg index="2" type="java.lang.Double" value="110500" />
+        <constructor-arg index="3" type="java.lang.String" value="CSE" />
+        <constructor-arg index="4">
+            <list>
+                <value>Java</value>
+                <value>Spring</value>
+                <value>SQL</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+   
+    <bean id="instructor" class="com.klef.jfsd.exam.Instructor">
+        <constructor-arg index="0" type="java.lang.Integer" value="341" />
+        <constructor-arg index="1" type="java.lang.String" value="Hemanth" />
+        <constructor-arg index="2" type="java.lang.String" value="hemanthchaluvadi@gmail.com" />
+        <constructor-arg index="3" type="java.lang.String" value="123456789" />
+    </bean>
+
+
+    <bean id="course" class="com.klef.jfsd.exam.Course">
+        <constructor-arg index="0" type="java.lang.Integer" value="301" />
+        <constructor-arg index="1" type="java.lang.String" value="Spring Framework" />
+        <constructor-arg index="2" type="java.lang.Integer" value="4" />
+        <property name="instructor" ref="instructor" />
+    </bean>
+
+</beans>
+
+
